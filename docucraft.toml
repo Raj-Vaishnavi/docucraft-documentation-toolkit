@@ -1,0 +1,5 @@
+required_sections = ["Overview", "Before you begin", "Procedure", "Troubleshooting"]
+
+[terminology]
+"SafeRestore" = ["Safe Restore", "saferestore"]
+"recovery point" = ["restore point"]
