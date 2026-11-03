@@ -37,6 +37,16 @@ python -m unittest discover -s tests -v
 
 The linter exits with status `1` when it finds errors and `0` when all checked files pass. Warnings are reported but do not fail the run. Use `--format json` for machine-readable output. Use `--no-config` to run with built-in defaults.
 
+## Browser interface
+
+DocuCraft also includes a small local browser interface. Start it from the project folder:
+
+```bash
+python scripts/docucraft_web.py
+```
+
+Open `http://127.0.0.1:8765` in your browser. Choose a sample, edit its Markdown in the page, and select **Run quality check** to see findings. The server listens only on your own computer and does not send document text to an external service. Keep the terminal open while using it; press `Ctrl+C` there to stop the server.
+
 ## Checks
 
 1. **Title:** each file has one Markdown H1 title.

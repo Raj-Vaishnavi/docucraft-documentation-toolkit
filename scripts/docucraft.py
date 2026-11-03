@@ -63,8 +63,9 @@ def _visible_lines(text: str) -> tuple[list[str], list[tuple[int, str]]]:
 
 
 def check_markdown(path: Path, required_sections: Iterable[str] = DEFAULT_SECTIONS,
-                   terminology: dict[str, list[str]] | None = None) -> list[Finding]:
-    text = path.read_text(encoding="utf-8")
+                   terminology: dict[str, list[str]] | None = None,
+                   text: str | None = None) -> list[Finding]:
+    text = path.read_text(encoding="utf-8") if text is None else text
     visible, headings = _visible_lines(text)
     findings: list[Finding] = []
     h1 = [(line, title) for line, title in headings if re.match(r"^#\s", visible[line - 1])]
